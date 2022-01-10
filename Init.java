@@ -20,11 +20,11 @@ public class Ex
     {
 
         Scanner sc=new Scanner(System.in);
-	int tc=convert(sc.nextLine());
+	int tc=Integer.parseInt(sc.nextLine());
 	
         for(int t=0;t<tc;t++)
         {
-
+	    
 
         }
     }
