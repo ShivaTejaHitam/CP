@@ -17,3 +17,24 @@ while (hmIterator.hasNext()) {
      System.out.println(mapElement.getKey() + " : "+ marks);
       
 }
+
+
+
+// Another method
+
+HashMap<String, Integer> hm = new HashMap<String, Integer>();
+
+hm.put("GeeksforGeeks", 54);
+hm.put("A computer portal", 80);
+hm.put("For geeks", 82);
+
+System.out.println("Created hashmap is" + hm);
+
+System.out.println("HashMap after adding bonus marks:");
+
+for (Map.Entry mapElement : hm.entrySet()) {
+	String key = (String)mapElement.getKey();
+
+	int value = ((int)mapElement.getValue() + 10);
+	System.out.println(key + " : " + value);
+}
