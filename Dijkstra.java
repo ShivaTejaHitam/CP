@@ -1,6 +1,6 @@
 import java.util.*;
 
-class findbestroute
+class shortestpath
 {   
     static int[] convert(String s){
         String[] str=s.split(" ");
