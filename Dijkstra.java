@@ -12,20 +12,20 @@ class findbestroute
         return arr;
     }
     
-    static int min_index(int[] dist,boolean[] visited,int n)
+    static int next_node(int[] dist,boolean[] visited,int n)
     {
-        int minima=Integer.MAX_VALUE;
-        int min_index=-1;
+        int shortest_dist_node=Integer.MAX_VALUE;
+        int index_of_sdn=-1;
         
         for(int i=0;i<n;i++)
         {
-            if(dist[i]<=minima && visited[i]==false)
+            if(dist[i]<=shortest_dist_node && visited[i]==false)
             {
-                minima=dist[i];
-                min_index=i;
+                shortest_dist_node=dist[i];
+                index_of_sdn=i;
             }
         }
-        return min_index;
+        return index_of_sdn;
     }
     
     static void Dijkstra(int[][] graph,int start,int n)
@@ -44,7 +44,7 @@ class findbestroute
 
         for(int i=0;i<n-1;i++)
         {
-            int u=min_index(dist,visited,n);
+            int u=next_node(dist,visited,n);
             visited[u]=true;
             
             for(int v=0;v<n;v++)
