@@ -7,7 +7,7 @@ def DFS(graph,startnode):
         print(vertex)
         for node in graph[vertex]:
             if visited.has_key(node)==False:
-                visited[node]=True
+                visited[node]=1
                 stack.append(node)
                 
 graph={'a':['b','c'],'b':['a','d'],'c':['a','d'],'d':['e'],'e':['a']}
