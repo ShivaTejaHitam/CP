@@ -6,7 +6,7 @@ def BFS(graph,startnode):
         vertex=queue.pop(0)
         print(vertex,end='->')
         for node in graph[vertex]:
-            if(node not in visited):
+            if(visited.has_key(node)==False):
                 visited[node]=1
                 queue.append(node)
 
