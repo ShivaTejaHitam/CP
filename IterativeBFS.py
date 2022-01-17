@@ -1,5 +1,5 @@
 def BFS(graph,startnode):
-    visited=[startnode]
+    visited={startnode:1}
     queue=[startnode]
 
     while(len(queue)!=0):
@@ -7,7 +7,7 @@ def BFS(graph,startnode):
         print(vertex,end='->')
         for node in graph[vertex]:
             if(node not in visited):
-                visited.append(node)
+                visited[node]=1
                 queue.append(node)
 
 
