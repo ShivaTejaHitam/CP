@@ -17,7 +17,7 @@ graph={'a':['b','c'],'b':['a','d'],'c':['a','d'],'d':['e'],'e':['a']}
 BFS(graph,'a')
 
 
-static void DFS(HashMap<Integer,ArrayList<Integer>> graph,int startNode)
+static void BFS(HashMap<Integer,ArrayList<Integer>> graph,int startNode)
     {
         HashMap<Integer,Integer> visited=new HashMap<>();
         ArrayList<Integer> queue=new ArrayList<>();
