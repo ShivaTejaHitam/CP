@@ -1,1 +1,11 @@
 
+
+Index :
+
+1) Introduction to Version Control Systems.
+2)Central and Distributed Version Control Systems.
+3)GIT as Version control systems.
+4) GIT day to day operations
+5) Branching, Merging, conflict resolution
+6) Branching Strategies
+
