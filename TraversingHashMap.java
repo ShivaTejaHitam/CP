@@ -32,9 +32,9 @@ System.out.println("Created hashmap is" + hm);
 
 System.out.println("HashMap after adding bonus marks:");
 
-for (Map.Entry mapElement : hm.entrySet()) {
-	String key = (String)mapElement.getKey();
+for (Map.Entry<String,Integer> mapElement : hm.entrySet()) {
+	String key = mapElement.getKey();
 
-	int value = ((int)mapElement.getValue() + 10);
+	int value = mapElement.getValue() + 10;
 	System.out.println(key + " : " + value);
 }
