@@ -30,11 +30,6 @@ void KMP(String text,String pattern)
   }
 }
 
-
-
-
-
-
 int[] get_lps(String s,int length) {
         
         int[] lps = new int[length];
