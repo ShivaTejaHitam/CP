@@ -11,3 +11,4 @@ static int countDivisors(int number)
   }
   return count;
 }
+// she lied me abt crush. lied that she is introvrt in school and stayed away from bad girls
