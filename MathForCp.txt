@@ -1,0 +1,1 @@
+product of two perfect squares is perfect square. For eg : 4 x 9 = 36
