@@ -1,9 +1,7 @@
-import java.util.*;
+import java.util.Scanner;
 
+class Init{
 
-public class Ex
-{
-    
     static int[] convert(String s)
     {
         String[] str=s.split(" ");
@@ -16,17 +14,14 @@ public class Ex
     }
 
 
-    public static void main(String args[])
-    {
+    public static void main(String args[]){
+        Scanner scanner = new Scanner(System.in);
+        int tc = Integer.parseInt(scanner.nextLine());
 
-        Scanner sc=new Scanner(System.in);
-	int tc=Integer.parseInt(sc.nextLine());
-	
-        for(int t=0;t<tc;t++)
-        {
-	    
-
+        for(int t = 0 ;t<tc;t++){
+            
+            
         }
+        
     }
 }
-

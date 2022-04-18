@@ -8,4 +8,27 @@ Index :
 4) GIT day to day operations
 5) Branching, Merging, conflict resolution
 6) Branching Strategies
+    
+///////////////////////////////////////////////////////////////////////////
+undoing things after commiting
+git commit --ammend
+
+unstaging a file
+git reset HEAD fileName 
+
+Unmodifying modified file
+git checkout -- fileName
+
+
+Undoing things with restore (Alternative for git reset)
+
+Unstaging a Staged File with git restore
+git restore --staged fileName
+
+Unmodifying a modified file with git restore
+git restore fileName
+
+
+        
+
 
