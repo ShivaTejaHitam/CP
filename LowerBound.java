@@ -1,7 +1,7 @@
-class LowerBound{
+class Solution {
     
-    static int min = Integer.MAX_VALUE;
-    static int min_index = -1;
+   static int min;
+    static int min_index;
     static int binarySearch(int[] nums,int target,int start,int end){
         
         if(start>end) return -1;
@@ -21,14 +21,18 @@ class LowerBound{
         return binarySearch(nums,target,start,mid-1);
     }
     static int lowerBound(int[] nums,int target,int start,int end){
+        min = Integer.MAX_VALUE;
+        min_index = -1;
         
         if(target < nums[start]) return 0;
         else if(target > nums[end]) return end+1;
 
         int loc = binarySearch(nums,target,start,end);
+        
         if(loc !=-1){
             return loc;
         }
         return min_index;
     }
+
 }
