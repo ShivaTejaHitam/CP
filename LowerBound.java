@@ -1,7 +1,7 @@
 class LowerBound{
     
     static int min = Integer.MAX_VALUE;
-    static int index = -1;
+    static int min_index = -1;
     static int binarySearch(int[] nums,int target,int start,int end){
         
         if(start>end) return -1;
@@ -16,21 +16,19 @@ class LowerBound{
         }
         if(nums[mid] < min){
             min = nums[mid];
-            index = mid;
+            min_index = mid;
         }
         return binarySearch(nums,target,start,mid-1);
     }
     static int lowerBound(int[] nums,int target,int start,int end){
+        
+        if(target < nums[start]) return 0;
+        else if(target > nums[end]) return end+1;
+
         int loc = binarySearch(nums,target,start,end);
         if(loc !=-1){
             return loc;
         }
-        return index;
-    }
-
-    public static void main(String[] args) {
-        int[] nums = {1,2,4,5,6,7,8,9};
-        System.out.println(nums[lowerBound(nums,3,0,nums.length-1)]);
-
+        return min_index;
     }
 }
