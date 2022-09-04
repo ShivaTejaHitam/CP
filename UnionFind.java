@@ -1,5 +1,7 @@
+
 class Solution
 {
+    // with Path compression
     public void union_(int a, int b, int par[], int rank[])
     {
         int aRoot = find(a,par);
@@ -19,6 +21,7 @@ class Solution
         }
     }
     
+    //with path compression
     public int find(int x,int par[]){
         if(par[x]!=x){
             par[x] = find(par[x],par);
@@ -26,13 +29,27 @@ class Solution
         return par[x];
     }
     
+    //without path compression
+    public void union(int a,int b,int[] par){
+        int x = find(a);
+        int y = find(b);
+        if(x==y) return;
+        par[b] = a;
+    }
+    
+    //without path compression
+    public int find(int x,int[] par){
+        if(par[x]==x){
+            return x;
+        }
+        return find(par[x]);
+    }
+    
     public Boolean isConnected(int a, int b, int par[], int rank[])
     {
         if(find(a,par)!=find(b,par)){
             return false;
         }
-        
         return true;
     }
-
 }
