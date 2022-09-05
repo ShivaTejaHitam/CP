@@ -20,8 +20,8 @@ public class Solution {
         parent[b] = a;
     }
     
-	public static int minimumSpanningTree(ArrayList<ArrayList<Integer>> edges, int n) {
-		//Your code goes here
+    public static int minimumSpanningTree(ArrayList<ArrayList<Integer>> edges, int n) {
+	//Your code goes here
         int minCost = 0;
         Collections.sort(edges,new SortByDistance());
         int[] parent = new int[n];
@@ -37,9 +37,9 @@ public class Solution {
                 minCost = minCost + edges.get(i).get(2);
                 union(x,y,parent);
             }
-            
         }
        
         return minCost;
-	}
+    }
 }
+
