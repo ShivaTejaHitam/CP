@@ -31,8 +31,8 @@ class Solution
     
     //without path compression
     public void union(int a,int b,int[] par){
-        int x = find(a);
-        int y = find(b);
+        int x = find(a,par);
+        int y = find(b,par);
         if(x==y) return;
         par[b] = a;
     }
@@ -42,7 +42,7 @@ class Solution
         if(par[x]==x){
             return x;
         }
-        return find(par[x]);
+        return find(par[x],par);
     }
     
     public Boolean isConnected(int a, int b, int par[], int rank[])
