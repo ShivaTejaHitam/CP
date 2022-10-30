@@ -34,7 +34,7 @@ class Solution
         int x = find(a,par);
         int y = find(b,par);
         if(x==y) return;
-        par[b] = a;
+        par[x] = y;
     }
     
     //without path compression
