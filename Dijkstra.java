@@ -28,11 +28,10 @@ class shortestpath
         return index_of_sdn;
     }
     
-    static void Dijkstra(int[][] graph,int start,int n)
+    static void Dijkstra(int[][] graph,int start,int n,int[] prev,int[] dist)
     {
-        int dist[]=new int[n];
-        boolean visited[]=new boolean[n];
         
+        boolean visited[]=new boolean[n];
         
         for(int i=0;i<n;i++)
         {
@@ -41,6 +40,7 @@ class shortestpath
         }
         
         dist[start]=0;
+        prev[start] = 0;
 
         for(int i=0;i<n-1;i++)
         {
@@ -52,23 +52,27 @@ class shortestpath
                 if(visited[v]==false && graph[u][v]!=0 && dist[u]+graph[u][v]<dist[v])
                 {
                     dist[v]=dist[u]+graph[u][v];
+                    prev[v]=u;
                 }
             }
-            
-        }
-        
-        
-        for(int i=0;i<n;i++)
-        {
-            if(i!=start)
-            {
-                System.out.println(dist[i]);
-            }
-        }
-        
-        
+                                                                   
+        } 
     }
 
+    static void printSolution(int[] prev,int dist[],int start){
+        for(int i = 0 ; i < dist.length ; i++){
+            System.out.println("The Distance of node " + i + " from Starting Node is " + dist[i]);
+            System.out.print("The path is : " + i + "->");
+            int j = i;
+            while(j !=start){
+                System.out.print(prev[j])+"->");
+                j = prev[j];
+            }
+            System.out.println(start);
+        }
+    }
+
+    
     public static void main(String args[])
     {
         Scanner sc=new Scanner(System.in);
@@ -86,8 +90,10 @@ class shortestpath
             graph[path[1]-1][path[0]-1]=path[2];
         }
         
-        // made a mistake here. called start instead of start-1
-        Dijkstra(graph,start-1,n);
+        int dist[] = new int[n];
+        int prev[] = new int[n];
+        Dijkstra(graph,0,n,prev,dist);
+        printSolution(int[] prev,int[] dist);
         
     }
 }
