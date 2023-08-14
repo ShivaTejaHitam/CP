@@ -21,3 +21,32 @@ class Solution:
         
         
         return global_sum;
+
+//**************************************************/
+/* variable size sliding window */
+public static int lenOfLongSubarr (int A[], int N, int K) {
+        int start = 0;
+        int end = 0;
+        int sum = 0;
+        int maxLength = Integer.MIN_VALUE;
+        
+        while(end < N){
+            sum = sum + A[end];
+            if(sum < K){
+                end++;
+            }
+            else if(sum == K){
+                maxLength = Math.max(maxLength,end-start+1);
+                end++;
+            }
+            else if(sum > K){
+                while(sum > K){
+                    sum = sum - A[start];
+                    start++;
+                }
+                end++;
+            }
+        }
+        
+        return maxLength;
+}
