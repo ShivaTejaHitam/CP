@@ -50,3 +50,34 @@ public static int lenOfLongSubarr (int A[], int N, int K) {
         
         return maxLength;
 }
+
+public int longestKSubstr(String s, int k) {
+        
+        Map<Character,Integer> map = new HashMap<>();
+        
+        int start = 0;
+        int result = -1;
+        
+        for(int end=0 ;end < s.length() ; end++){
+            char charAtEnd = s.charAt(end);
+            map.put(charAtEnd,map.getOrDefault(charAtEnd,0)+1);
+            
+            while(map.size() > k){
+                char charAtStart = s.charAt(start);
+                map.put(charAtStart, map.get(charAtStart) - 1);
+                
+                if(map.get(charAtStart) == 0){
+                    map.remove(charAtStart);
+                }
+                
+                start++;
+            }
+            
+            if(map.size() == k){
+                result = Math.max(result,end - start +1);
+            }
+        }
+        
+        
+        return result;
+    }
